@@ -11,16 +11,16 @@ const Chat = ({ id, profilePic, username, timestamp, imageUrl, read }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const open = () => {
+    dispatch(selectImage(imageUrl));
     if (!read) {
-      dispatch(selectImage(imageUrl));
       db.collection("posts").doc(id).set(
         {
           read: true,
         },
         { merge: true }
       );
-      navigate("/chats/view");
     }
+    navigate("/chats/view");
   };
   return (
     <div onClick={open} className="chat">

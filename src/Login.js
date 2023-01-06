@@ -5,6 +5,7 @@ import { login } from "./features/appSlice";
 import { auth, provider } from "./firebase";
 import "./Login.css";
 const Login = () => {
+  alert("Welcome, This is a snapchat clone build project by Haruna Faruk");
   const dispatch = useDispatch();
   const signIn = () => {
     auth
